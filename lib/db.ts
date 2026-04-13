@@ -2,17 +2,47 @@ import Database from "better-sqlite3"
 import fs from "node:fs"
 import path from "node:path"
 
+const canWriteDbFile = (dbPath: string) => {
+  const dir = path.dirname(dbPath)
+
+  try {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true })
+    }
+
+    if (fs.existsSync(dbPath)) {
+      fs.accessSync(dbPath, fs.constants.W_OK)
+      return true
+    }
+
+    fs.writeFileSync(dbPath, "", { flag: "a" })
+    return true
+  } catch {
+    return false
+  }
+}
+
 const getDbPath = () => {
+  const candidates: string[] = []
+
   if (process.env.SQLITE_DB_PATH) {
-    return process.env.SQLITE_DB_PATH
+    candidates.push(process.env.SQLITE_DB_PATH)
   }
 
-  // Serverless hosts usually allow write access only under /tmp.
-  if (process.env.VERCEL) {
-    return path.join("/tmp", "rankings.db")
+  // Most serverless platforms only allow writes in /tmp.
+  if (process.env.VERCEL || process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    candidates.push(path.join("/tmp", "rankings.db"))
   }
 
-  return path.join(process.cwd(), "data", "rankings.db")
+  candidates.push(path.join(process.cwd(), "data", "rankings.db"))
+
+  for (const candidate of candidates) {
+    if (canWriteDbFile(candidate)) {
+      return candidate
+    }
+  }
+
+  throw new Error("No writable path found for SQLite database.")
 }
 
 declare global {
@@ -39,11 +69,6 @@ const initialize = (db: Database.Database) => {
 export const getDb = () => {
   if (!global.__sqliteDb) {
     const dbPath = getDbPath()
-    const dataDir = path.dirname(dbPath)
-
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true })
-    }
     global.__sqliteDb = new Database(dbPath)
     initialize(global.__sqliteDb)
   }
