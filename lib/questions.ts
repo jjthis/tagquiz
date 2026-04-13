@@ -4,246 +4,455 @@ export type QuizQuestion = {
   options: string[]
   difficulty: "easy" | "medium" | "hard"
 }
+
+
+
+
 export const QUESTION_BANK: QuizQuestion[] = [
   {
-    clue:
-      "A hierarchical tree-decomposition paradigm that partitions edges and vertices into structurally heavy and light components so that repeated path and subtree queries collapse into logarithmic traversals through a bounded number of preferred chains.",
+    clue: "Hierarchical Heavy-Path Decomposition Framework for Amortized Tree Query Routing and Path Compression",
     answer: "heavy-light 분할",
-    options: ["heavy-light 분할", "세그먼트 트리", "트라이", "LCA"],
+    options: ["heavy-light 분할", "mo's", "세그먼트 트리 비츠", "라빈–카프"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A bidirectional tree dynamic-programming framework in which information is first propagated downward from the root and then reassembled upward through rerooting-style state transitions to obtain every node's perspective in linear or near-linear time.",
+    clue: "Bidirectional Rooted-Tree Dynamic Programming Propagation and Re-Rooting Aggregation Framework",
     answer: "트리에서의 전방향 다이나믹 프로그래밍",
-    options: ["트리에서의 전방향 다이나믹 프로그래밍", "위상 정렬", "이분 탐색", "비트마스크 DP"],
+    options: ["트리에서의 전방향 다이나믹 프로그래밍", "매트로이드", "경사 하강법", "도미네이터 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A range-query optimization pattern that replaces direct maintenance of interval maxima with amortized amortization over a monotone deque, exploiting dominance and evictions to answer sliding-window style extremal queries efficiently.",
+    clue: "Deque-Based Monotone Window Extremum Maintenance and Amortized Interval Optimization Technique",
     answer: "덱을 이용한 구간 최댓값 트릭",
-    options: ["덱을 이용한 구간 최댓값 트릭", "이분 탐색", "해시", "플로이드 워셜"],
+    options: ["덱을 이용한 구간 최댓값 트릭", "bulldozer 트릭", "리–차오 트리", "접미사 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A fully persistent ordered-interval structure that preserves historical versions of segment-tree states, allowing queries to be evaluated against any past snapshot while updates branch the timeline rather than overwrite it.",
+    clue: "Fully Persistent Versioned Segment-Tree Architecture for Historical Range-State Preservation",
     answer: "퍼시스턴트 세그먼트 트리",
-    options: ["퍼시스턴트 세그먼트 트리", "라빈 카프", "스택", "union-find"],
+    options: ["퍼시스턴트 세그먼트 트리", "스플레이 트리", "중국인의 나머지 정리", "세그먼트 트리 비츠"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A classical arithmetic reconstruction principle that recovers an integer solution from mutually coprime modular residues by assembling congruence classes into a uniquely determined global representative.",
+    clue: "Residue-Class Reconstruction Theorem for Pairwise Coprime Modular Congruence Aggregation",
     answer: "중국인의 나머지 정리",
-    options: ["중국인의 나머지 정리", "오일러 정리", "페르마 소정리", "유클리드 호제법"],
+    options: ["중국인의 나머지 정리", "이산 로그", "벌리캠프–매시", "지수승강 보조정리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "An offline query-processing technique where intervals are reordered by blocks and endpoint motion is minimized, so that add/remove operations become a controlled pointer-walking routine over the entire query set.",
+    clue: "Offline Interval-Reordering and Block-Decomposed Query Locality Minimization Framework",
     answer: "mo's",
-    options: ["mo's", "세그먼트 트리", "다익스트라", "LCS"],
+    options: ["mo's", "cdq 분할 정복", "aliens 트릭", "스토어–바그너"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A self-adjusting binary-search-tree variant that performs local rotations after each access so that recently touched elements migrate toward the root, yielding amortized efficiency through adaptive restructuring.",
+    clue: "Self-Adjusting Rotation-Based Binary Search Tree for Adaptive Access Locality Exploitation",
     answer: "스플레이 트리",
-    options: ["스플레이 트리", "힙", "벡터", "트라이"],
+    options: ["스플레이 트리", "탑 트리", "링크/컷 트리", "접미사 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A geometric membership test for a nonconvex polygon whose interior can still be characterized by directional consistency and winding-style reasoning despite the absence of global convexity.",
+    clue: "Concave Polygon Interior Membership Verification via Topological Winding and Boundary Consistency Analysis",
     answer: "오목 다각형 내부의 점 판정",
-    options: ["오목 다각형 내부의 점 판정", "볼록 껍질", "최소 외접원", "선분 교차 판정"],
+    options: ["오목 다각형 내부의 점 판정", "보로노이 다이어그램", "쌍대성", "도형에서의 불 연산"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A dynamic forest data structure designed to maintain connectivity and path aggregates under link and cut operations, supporting structural edge insertions and deletions while preserving a forest representation.",
+    clue: "Amortized Dynamic Forest Connectivity Maintenance under Link-and-Cut Structural Transitions",
     answer: "링크/컷 트리",
-    options: ["링크/컷 트리", "세그먼트 트리", "KMP", "이진 힙"],
+    options: ["링크/컷 트리", "탑 트리", "heavy-light 분할", "도미네이터 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A heuristic global-search technique that simulates gradual cooling in a probabilistic energy landscape, occasionally accepting worse states early on to escape local minima before settling into refinement.",
+    clue: "Probabilistic Energy-Landscape Descent with Temperature-Scheduled Acceptance and Escape Dynamics",
     answer: "담금질 기법",
-    options: ["담금질 기법", "분할 정복", "최소 컷", "벨만-포드"],
+    options: ["담금질 기법", "경사 하강법", "aliens 트릭", "매트로이드"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A rolling-hash style string comparison method that compresses substrings into modular fingerprints so equality checks become arithmetic comparisons rather than full character-by-character scans.",
+    clue: "Rolling-Hash Fingerprint Comparison Scheme for Modular Substring Identity Verification",
     answer: "라빈–카프",
-    options: ["라빈–카프", "KMP", "Z 알고리즘", "접미사 배열"],
+    options: ["라빈–카프", "접미사 트리", "벌리캠프–매시", "이산 로그"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A state-compression dynamic-programming template that enumerates boundary profiles across a grid frontier, carrying only the interface configuration between processed and unprocessed regions.",
+    clue: "Boundary-Profile State Compression Dynamic Programming over Grid Connectivity Interfaces",
     answer: "커넥션 프로파일을 이용한 다이나믹 프로그래밍",
-    options: ["커넥션 프로파일을 이용한 다이나믹 프로그래밍", "비트마스크 DP", "트리 DP", "최단 경로"],
+    options: ["커넥션 프로파일을 이용한 다이나믹 프로그래밍", "트리에서의 전방향 다이나믹 프로그래밍", "cdq 분할 정복", "mo's"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A piecewise-linear lower-envelope structure that stores affine functions and answers minimum-at-point queries by maintaining the dominant line over segments of the domain.",
+    clue: "Piecewise Linear Lower-Envelope Maintenance Structure for Dynamic Affine Function Optimization",
     answer: "리–차오 트리",
-    options: ["리–차오 트리", "세그먼트 트리", "펜윅 트리", "트라이"],
+    options: ["리–차오 트리", "세그먼트 트리 비츠", "퍼시스턴트 세그먼트 트리", "단조 큐를 이용한 최적화"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A linear-algebraic sequence-solving framework that transforms recurrence constraints into polynomial or matrix-like identities and then reconstructs the governing rule from sampled terms.",
+    clue: "Linear Recurrence Reconstruction and Sequence Synthesis via Polynomial-Algebraic State Recovery",
     answer: "벌리캠프–매시",
-    options: ["벌리캠프–매시", "카츠–카렐라", "정렬", "최대 유량"],
+    options: ["벌리캠프–매시", "다항식을 이용한 선형점화식 계산", "이산 로그", "중국인의 나머지 정리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A vector-space basis over characteristic two in which every value is represented as a xor-combination of independent generators, enabling maximum subset xor and linear independence reasoning.",
+    clue: "XOR-Linear Basis Representation over GF(2) for Maximum Independent Subset Combination",
     answer: "배타적 논리합 기저 (gf(2))",
-    options: ["배타적 논리합 기저 (gf(2))", "최소 공배수", "그래프 칼라링", "세그먼트 트리"],
+    options: ["배타적 논리합 기저 (gf(2))", "매트로이드", "세그먼트 트리 비츠", "이산 로그"],
     difficulty: "hard",
   },
   {
-    clue:
-      "An offline connectivity-maintenance method that resolves edge-deletion dynamics by reversing time, batching intervals, and using divide-and-conquer style reconstruction of component states.",
+    clue: "Offline Fully Dynamic Graph Connectivity Resolution via Time-Reversed Divide-and-Conquer Decomposition",
     answer: "오프라인 동적 연결성 판정",
-    options: ["오프라인 동적 연결성 판정", "최단 경로", "트리 지름", "이분 매칭"],
+    options: ["오프라인 동적 연결성 판정", "링크/컷 트리", "cdq 분할 정복", "탑 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "An optimization trick that converts a quadratic or parametric objective into a search over answer space, repeatedly testing feasibility until the extremal value is isolated.",
+    clue: "Parametric Answer-Space Optimization via Alien-Legendary Lagrangian Cost Balancing Framework",
     answer: "aliens 트릭",
-    options: ["aliens 트릭", "모노톤 스택", "백트래킹", "A*"],
+    options: ["aliens 트릭", "단조 큐를 이용한 최적화", "담금질 기법", "mo's"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A geometric/boolean manipulation regime in which regions are represented as set-like entities and combined through logical operators such as union, intersection, and complement in planar space.",
+    clue: "Boolean Set-Operation Computation on Planar Geometric Regions under Spatial Algebraic Composition",
     answer: "도형에서의 불 연산",
-    options: ["도형에서의 불 연산", "도형의 넓이", "최소 신장 트리", "문자열 압축"],
+    options: ["도형에서의 불 연산", "쌍대성", "보로노이 다이어그램", "bulldozer 트릭"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A segment-tree augmentation technique that maintains piecewise monotonic convexity-like constraints, pushing lazy corrections only when a node's linear bounds are violated by updates.",
+    clue: "Segment-Tree Beats with Constraint-Lazy Propagation and Partial Structural Rebalancing",
     answer: "세그먼트 트리 비츠",
-    options: ["세그먼트 트리 비츠", "느리게 갱신하는 세그트리", "트라이", "이분 탐색"],
+    options: ["세그먼트 트리 비츠", "퍼시스턴트 세그먼트 트리", "리–차오 트리", "탑 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A symmetry-based dualization principle that replaces a primal object with a counterpart whose combinatorial or geometric properties encode the original problem from a transformed viewpoint.",
+    clue: "Primal-Dual Symmetry Transformation Principle for Structural Problem Recasting",
     answer: "쌍대성",
-    options: ["쌍대성", "단조성", "연속성", "완전탐색"],
+    options: ["쌍대성", "매트로이드", "보로노이 다이어그램", "스토어–바그너"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A diagrammatic partition of the plane into cells defined by nearest-site dominance, where every location inherits the identity of the generator point minimizing Euclidean distance.",
+    clue: "Planar Voronoi Cell Decomposition under Nearest-Site Dominance and Metric Partitioning",
     answer: "보로노이 다이어그램",
-    options: ["보로노이 다이어그램", "Delaunay triangulation", "최소 스패닝 트리", "오목 다각형"],
+    options: ["보로노이 다이어그램", "쌍대성", "도형에서의 불 연산", "bulldozer 트릭"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A greedy optimization pattern that maintains monotonic candidates in a deque-like invariant so each index enters and leaves a bounded number of times while extremal transitions are computed.",
+    clue: "Monotone Queue-Based Sliding-Window Optimization and Amortized Extremal Transition Management",
     answer: "단조 큐를 이용한 최적화",
-    options: ["단조 큐를 이용한 최적화", "이진 탐색", "정수론", "플로이드 워셜"],
+    options: ["단조 큐를 이용한 최적화", "덱을 이용한 구간 최댓값 트릭", "aliens 트릭", "리–차오 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A geometric sweeping technique that rotates or pivots a line through a set of points, leveraging pairwise event ordering to extract critical combinatorial or proximity information.",
+    clue: "Geometric Sweep-Line Pivot Framework for Directional Event Ordering and Critical Configuration Extraction",
     answer: "bulldozer 트릭",
-    options: ["bulldozer 트릭", "스위핑", "푸리에 변환", "위상 정렬"],
+    options: ["bulldozer 트릭", "보로노이 다이어그램", "쌍대성", "도형에서의 불 연산"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A method for evaluating linear recurrences by encoding the recurrence as a polynomial relation and using algebraic composition to jump to the nth term without simulating all previous steps.",
+    clue: "Polynomial-Representation Evaluation Method for Linear Recurrence Term Computation",
     answer: "다항식을 이용한 선형점화식 계산",
-    options: ["다항식을 이용한 선형점화식 계산", "누적합", "이분 탐색", "그리디"],
+    options: ["다항식을 이용한 선형점화식 계산", "벌리캠프–매시", "이산 로그", "중국인의 나머지 정리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A number-theoretic discrete inversion problem in which one seeks the exponent that maps a generator to a target residue under modular multiplication, often solved with baby-step giant-step or related algebraic methods.",
+    clue: "Discrete Logarithm Extraction in Cyclic Modular Multiplicative Groups",
     answer: "이산 로그",
-    options: ["이산 로그", "유클리드 호제법", "소수 판정", "CRT"],
+    options: ["이산 로그", "중국인의 나머지 정리", "벌리캠프–매시", "배타적 논리합 기저 (gf(2))"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A divide-and-conquer offline paradigm that recursively splits the query/update timeline and propagates influence through subproblems while preserving contribution accounting across boundaries.",
+    clue: "Offline Divide-and-Conquer Query Decomposition Framework for Time-Indexed Contribution Propagation",
     answer: "cdq 분할 정복",
-    options: ["cdq 분할 정복", "병합 정렬", "벨만-포드", "Kruskal"],
+    options: ["cdq 분할 정복", "mo's", "오프라인 동적 연결성 판정", "트리에서의 전방향 다이나믹 프로그래밍"],
     difficulty: "hard",
   },
   {
-    clue:
-      "An abstract combinatorial optimization framework where feasible sets obey exchange axioms, enabling greedy selection to be proven correct far beyond simple graph structures.",
+    clue: "Abstract Independence-System Optimization Framework Satisfying the Exchange Axiom",
     answer: "매트로이드",
-    options: ["매트로이드", "그래프", "트리", "큐"],
+    options: ["매트로이드", "쌍대성", "배타적 논리합 기저 (gf(2))", "스토어–바그너"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A tree-structured indexing representation of all suffixes of a string, compressed so that repeated prefixes share paths and substring membership can be tested through path descent.",
+    clue: "Compressed Suffix-Tree Indexing Structure for Complete Substring Enumeration and Membership Routing",
     answer: "접미사 트리",
-    options: ["접미사 트리", "접미사 배열", "트라이", "KMP"],
+    options: ["접미사 트리", "라빈–카프", "스플레이 트리", "도미네이터 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A directed-graph structural analysis object that identifies dominance relationships in control-flow style reachability, compressing all paths from the entry node into a hierarchy of mandatory ancestors.",
+    clue: "Directed Dominance-Hierarchy Tree Construction for Control-Flow Reachability Analysis",
     answer: "도미네이터 트리",
-    options: ["도미네이터 트리", "신장 트리", "링크컷 트리", "최소 공통 조상"],
+    options: ["도미네이터 트리", "탑 트리", "링크/컷 트리", "접미사 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A dynamic forest framework built from preferred-path decomposition and auxiliary trees, often introduced as a more theory-rich alternative to splay-centric dynamic tree maintenance.",
+    clue: "Self-Reconfiguring Hierarchical Boundary-Cluster Meta-Tree for Dynamic Forest Path and Subtree Aggregation with Topological Preservation",
     answer: "탑 트리",
-    options: ["탑 트리", "링크/컷 트리", "트라이", "세그먼트 트리"],
+    options: ["탑 트리", "링크/컷 트리", "heavy-light 분할", "도미네이터 트리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A first-order iterative optimization rule that repeatedly updates parameters in the negative gradient direction, trading exact symbolic solution for scalable descent on smooth objectives.",
+    clue: "Gradient-Descent-Based Continuous Optimization with Iterative Negative-Slope Parameter Updates",
     answer: "경사 하강법",
-    options: ["경사 하강법", "이분 탐색", "다익스트라", "유니온 파인드"],
+    options: ["경사 하강법", "담금질 기법", "aliens 트릭", "단조 큐를 이용한 최적화"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A graph-theoretic determinant-based identity that counts or characterizes combinatorial objects through a matrix expansion, often appearing in planar matching enumeration and related algebraic proofs.",
+    clue: "Determinantal Combinatorial Enumeration Identity for Structured Path and Matching Systems",
     answer: "린드스트롬–게셀–비엔노 보조정리",
-    options: ["린드스트롬–게셀–비엔노 보조정리", "최소 컷 정리", "오일러 정리", "체비쇼프 부등식"],
+    options: ["린드스트롬–게셀–비엔노 보조정리", "매트로이드", "쌍대성", "스토어–바그너"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A permutation-and-swapping style reduction technique that repeatedly transforms a structure by exchanging adjacent constraints until the target arrangement emerges under maintained invariants.",
+    clue: "Global Minimum-Cut Extraction via Iterative Vertex Contraction and Phase-Wise Cut Tightening",
     answer: "스토어–바그너",
-    options: ["스토어–바그너", "힙 정렬", "merge sort", "Kruskal"],
+    options: ["스토어–바그너", "매트로이드", "도미네이터 트리", "지수승강 보조정리"],
     difficulty: "hard",
   },
   {
-    clue:
-      "A combinatorial principle asserting that sufficiently dense structures force the existence of a guaranteed configuration, typically used as a lower-bound existence lemma in discrete mathematics.",
+    clue: "Exponent-Lifting Number-Theoretic Lemma for Prime-Power Valuation Escalation in Modular Equations",
     answer: "지수승강 보조정리",
-    options: ["지수승강 보조정리", "피타고라스 정리", "중앙극한정리", "체비쇼프 부등식"],
+    options: ["지수승강 보조정리", "중국인의 나머지 정리", "이산 로그", "벌리캠프–매시"],
     difficulty: "hard",
-  },
-];
+  }];
+// export const QUESTION_BANK: QuizQuestion[] = [
+//   {
+//     clue:
+//       "A hierarchical tree-decomposition paradigm that partitions edges and vertices into structurally heavy and light components so that repeated path and subtree queries collapse into logarithmic traversals through a bounded number of preferred chains.",
+//     answer: "heavy-light 분할",
+//     options: ["heavy-light 분할", "세그먼트 트리", "트라이", "LCA"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A bidirectional tree dynamic-programming framework in which information is first propagated downward from the root and then reassembled upward through rerooting-style state transitions to obtain every node's perspective in linear or near-linear time.",
+//     answer: "트리에서의 전방향 다이나믹 프로그래밍",
+//     options: ["트리에서의 전방향 다이나믹 프로그래밍", "위상 정렬", "이분 탐색", "비트마스크 DP"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A range-query optimization pattern that replaces direct maintenance of interval maxima with amortized amortization over a monotone deque, exploiting dominance and evictions to answer sliding-window style extremal queries efficiently.",
+//     answer: "덱을 이용한 구간 최댓값 트릭",
+//     options: ["덱을 이용한 구간 최댓값 트릭", "이분 탐색", "해시", "플로이드 워셜"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A fully persistent ordered-interval structure that preserves historical versions of segment-tree states, allowing queries to be evaluated against any past snapshot while updates branch the timeline rather than overwrite it.",
+//     answer: "퍼시스턴트 세그먼트 트리",
+//     options: ["퍼시스턴트 세그먼트 트리", "라빈 카프", "스택", "union-find"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A classical arithmetic reconstruction principle that recovers an integer solution from mutually coprime modular residues by assembling congruence classes into a uniquely determined global representative.",
+//     answer: "중국인의 나머지 정리",
+//     options: ["중국인의 나머지 정리", "오일러 정리", "페르마 소정리", "유클리드 호제법"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "An offline query-processing technique where intervals are reordered by blocks and endpoint motion is minimized, so that add/remove operations become a controlled pointer-walking routine over the entire query set.",
+//     answer: "mo's",
+//     options: ["mo's", "세그먼트 트리", "다익스트라", "LCS"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A self-adjusting binary-search-tree variant that performs local rotations after each access so that recently touched elements migrate toward the root, yielding amortized efficiency through adaptive restructuring.",
+//     answer: "스플레이 트리",
+//     options: ["스플레이 트리", "힙", "벡터", "트라이"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A geometric membership test for a nonconvex polygon whose interior can still be characterized by directional consistency and winding-style reasoning despite the absence of global convexity.",
+//     answer: "오목 다각형 내부의 점 판정",
+//     options: ["오목 다각형 내부의 점 판정", "볼록 껍질", "최소 외접원", "선분 교차 판정"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A dynamic forest data structure designed to maintain connectivity and path aggregates under link and cut operations, supporting structural edge insertions and deletions while preserving a forest representation.",
+//     answer: "링크/컷 트리",
+//     options: ["링크/컷 트리", "세그먼트 트리", "KMP", "이진 힙"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A heuristic global-search technique that simulates gradual cooling in a probabilistic energy landscape, occasionally accepting worse states early on to escape local minima before settling into refinement.",
+//     answer: "담금질 기법",
+//     options: ["담금질 기법", "분할 정복", "최소 컷", "벨만-포드"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A rolling-hash style string comparison method that compresses substrings into modular fingerprints so equality checks become arithmetic comparisons rather than full character-by-character scans.",
+//     answer: "라빈–카프",
+//     options: ["라빈–카프", "KMP", "Z 알고리즘", "접미사 배열"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A state-compression dynamic-programming template that enumerates boundary profiles across a grid frontier, carrying only the interface configuration between processed and unprocessed regions.",
+//     answer: "커넥션 프로파일을 이용한 다이나믹 프로그래밍",
+//     options: ["커넥션 프로파일을 이용한 다이나믹 프로그래밍", "비트마스크 DP", "트리 DP", "최단 경로"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A piecewise-linear lower-envelope structure that stores affine functions and answers minimum-at-point queries by maintaining the dominant line over segments of the domain.",
+//     answer: "리–차오 트리",
+//     options: ["리–차오 트리", "세그먼트 트리", "펜윅 트리", "트라이"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A linear-algebraic sequence-solving framework that transforms recurrence constraints into polynomial or matrix-like identities and then reconstructs the governing rule from sampled terms.",
+//     answer: "벌리캠프–매시",
+//     options: ["벌리캠프–매시", "카츠–카렐라", "정렬", "최대 유량"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A vector-space basis over characteristic two in which every value is represented as a xor-combination of independent generators, enabling maximum subset xor and linear independence reasoning.",
+//     answer: "배타적 논리합 기저 (gf(2))",
+//     options: ["배타적 논리합 기저 (gf(2))", "최소 공배수", "그래프 칼라링", "세그먼트 트리"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "An offline connectivity-maintenance method that resolves edge-deletion dynamics by reversing time, batching intervals, and using divide-and-conquer style reconstruction of component states.",
+//     answer: "오프라인 동적 연결성 판정",
+//     options: ["오프라인 동적 연결성 판정", "최단 경로", "트리 지름", "이분 매칭"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "An optimization trick that converts a quadratic or parametric objective into a search over answer space, repeatedly testing feasibility until the extremal value is isolated.",
+//     answer: "aliens 트릭",
+//     options: ["aliens 트릭", "모노톤 스택", "백트래킹", "A*"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A geometric/boolean manipulation regime in which regions are represented as set-like entities and combined through logical operators such as union, intersection, and complement in planar space.",
+//     answer: "도형에서의 불 연산",
+//     options: ["도형에서의 불 연산", "도형의 넓이", "최소 신장 트리", "문자열 압축"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A segment-tree augmentation technique that maintains piecewise monotonic convexity-like constraints, pushing lazy corrections only when a node's linear bounds are violated by updates.",
+//     answer: "세그먼트 트리 비츠",
+//     options: ["세그먼트 트리 비츠", "느리게 갱신하는 세그트리", "트라이", "이분 탐색"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A symmetry-based dualization principle that replaces a primal object with a counterpart whose combinatorial or geometric properties encode the original problem from a transformed viewpoint.",
+//     answer: "쌍대성",
+//     options: ["쌍대성", "단조성", "연속성", "완전탐색"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A diagrammatic partition of the plane into cells defined by nearest-site dominance, where every location inherits the identity of the generator point minimizing Euclidean distance.",
+//     answer: "보로노이 다이어그램",
+//     options: ["보로노이 다이어그램", "Delaunay triangulation", "최소 스패닝 트리", "오목 다각형"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A greedy optimization pattern that maintains monotonic candidates in a deque-like invariant so each index enters and leaves a bounded number of times while extremal transitions are computed.",
+//     answer: "단조 큐를 이용한 최적화",
+//     options: ["단조 큐를 이용한 최적화", "이진 탐색", "정수론", "플로이드 워셜"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A geometric sweeping technique that rotates or pivots a line through a set of points, leveraging pairwise event ordering to extract critical combinatorial or proximity information.",
+//     answer: "bulldozer 트릭",
+//     options: ["bulldozer 트릭", "스위핑", "푸리에 변환", "위상 정렬"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A method for evaluating linear recurrences by encoding the recurrence as a polynomial relation and using algebraic composition to jump to the nth term without simulating all previous steps.",
+//     answer: "다항식을 이용한 선형점화식 계산",
+//     options: ["다항식을 이용한 선형점화식 계산", "누적합", "이분 탐색", "그리디"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A number-theoretic discrete inversion problem in which one seeks the exponent that maps a generator to a target residue under modular multiplication, often solved with baby-step giant-step or related algebraic methods.",
+//     answer: "이산 로그",
+//     options: ["이산 로그", "유클리드 호제법", "소수 판정", "CRT"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A divide-and-conquer offline paradigm that recursively splits the query/update timeline and propagates influence through subproblems while preserving contribution accounting across boundaries.",
+//     answer: "cdq 분할 정복",
+//     options: ["cdq 분할 정복", "병합 정렬", "벨만-포드", "Kruskal"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "An abstract combinatorial optimization framework where feasible sets obey exchange axioms, enabling greedy selection to be proven correct far beyond simple graph structures.",
+//     answer: "매트로이드",
+//     options: ["매트로이드", "그래프", "트리", "큐"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A tree-structured indexing representation of all suffixes of a string, compressed so that repeated prefixes share paths and substring membership can be tested through path descent.",
+//     answer: "접미사 트리",
+//     options: ["접미사 트리", "접미사 배열", "트라이", "KMP"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A directed-graph structural analysis object that identifies dominance relationships in control-flow style reachability, compressing all paths from the entry node into a hierarchy of mandatory ancestors.",
+//     answer: "도미네이터 트리",
+//     options: ["도미네이터 트리", "신장 트리", "링크컷 트리", "최소 공통 조상"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A dynamic forest framework built from preferred-path decomposition and auxiliary trees, often introduced as a more theory-rich alternative to splay-centric dynamic tree maintenance.",
+//     answer: "탑 트리",
+//     options: ["탑 트리", "링크/컷 트리", "트라이", "세그먼트 트리"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A first-order iterative optimization rule that repeatedly updates parameters in the negative gradient direction, trading exact symbolic solution for scalable descent on smooth objectives.",
+//     answer: "경사 하강법",
+//     options: ["경사 하강법", "이분 탐색", "다익스트라", "유니온 파인드"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A graph-theoretic determinant-based identity that counts or characterizes combinatorial objects through a matrix expansion, often appearing in planar matching enumeration and related algebraic proofs.",
+//     answer: "린드스트롬–게셀–비엔노 보조정리",
+//     options: ["린드스트롬–게셀–비엔노 보조정리", "최소 컷 정리", "오일러 정리", "체비쇼프 부등식"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A permutation-and-swapping style reduction technique that repeatedly transforms a structure by exchanging adjacent constraints until the target arrangement emerges under maintained invariants.",
+//     answer: "스토어–바그너",
+//     options: ["스토어–바그너", "힙 정렬", "merge sort", "Kruskal"],
+//     difficulty: "hard",
+//   },
+//   {
+//     clue:
+//       "A combinatorial principle asserting that sufficiently dense structures force the existence of a guaranteed configuration, typically used as a lower-bound existence lemma in discrete mathematics.",
+//     answer: "지수승강 보조정리",
+//     options: ["지수승강 보조정리", "피타고라스 정리", "중앙극한정리", "체비쇼프 부등식"],
+//     difficulty: "hard",
+//   },
+// ];
 // export const QUESTION_BANK: QuizQuestion[] = [
 //   {
 //     clue: "수식적 성질과 정리 기반으로 문제를 해석하는 가장 범용적인 학문 태그",
