@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Algorithm Tag 4-Choice Quiz Game",
-  description: "허세 알고리즘 설명을 맞추는 4지선다 밈 퀴즈 게임",
+  description: "알고리즘 설명을 맞추는 4지선다 밈 퀴즈 게임",
 };
 
 export default function RootLayout({
