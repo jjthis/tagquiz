@@ -2,8 +2,18 @@ import Database from "better-sqlite3"
 import fs from "node:fs"
 import path from "node:path"
 
-const dataDir = path.join(process.cwd(), "data")
-const dbPath = path.join(dataDir, "rankings.db")
+const getDbPath = () => {
+  if (process.env.SQLITE_DB_PATH) {
+    return process.env.SQLITE_DB_PATH
+  }
+
+  // Serverless hosts usually allow write access only under /tmp.
+  if (process.env.VERCEL) {
+    return path.join("/tmp", "rankings.db")
+  }
+
+  return path.join(process.cwd(), "data", "rankings.db")
+}
 
 declare global {
   var __sqliteDb: Database.Database | undefined
@@ -28,6 +38,9 @@ const initialize = (db: Database.Database) => {
 
 export const getDb = () => {
   if (!global.__sqliteDb) {
+    const dbPath = getDbPath()
+    const dataDir = path.dirname(dbPath)
+
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true })
     }
