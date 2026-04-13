@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Algorithm Tag 4-Choice Quiz Game
 
-## Getting Started
+허세 가득한 알고리즘 설명 문장을 보고 원래 알고리즘 이름을 맞추는 4지선다 웹 게임입니다.
+친구끼리 빠르게 돌리면서 웃긴 문제를 맞히는 밈성 퀴즈를 목표로 합니다.
 
-First, run the development server:
+## 주요 기능
+
+- 문제 수 선택: `5 / 10 / 20 / All`
+- 보기 클릭 즉시 정오답 피드백
+- 자동 다음 문제(1초) + 수동 다음 버튼
+- 게임 종료 후 닉네임 입력 및 랭킹 등록
+- 로컬 SQLite 파일(`data/rankings.db`) 기반 랭킹 저장/조회
+
+## 기술 스택
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- SQLite (`better-sqlite3`)
+
+## 실행 방법
+
+1. 의존성 설치
+
+```bash
+npm install
+```
+
+2. 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 브라우저 접속
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 로컬 DB 설명
 
-## Learn More
+- 서버 실행 시 `data/rankings.db` 파일이 자동 생성됩니다.
+- 랭킹 테이블이 없으면 자동으로 생성됩니다.
+- 참고용 스키마는 `db/schema.sql`에 있습니다.
+- DB 파일은 `.gitignore`에 포함되어 Git에 올라가지 않습니다.
 
-To learn more about Next.js, take a look at the following resources:
+## API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `GET /api/rankings`
+  - 랭킹 TOP 20 조회
+- `POST /api/rankings`
+  - 요청 바디:
+    - `nickname: string`
+    - `score: number`
+    - `totalQuestions: number`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+정렬 기준: 점수 내림차순 → 정확도 내림차순 → 먼저 등록한 순
